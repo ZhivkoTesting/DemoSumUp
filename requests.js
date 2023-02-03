@@ -1,4 +1,16 @@
 let axios = require('axios');
+let responseHandler = async function (config) {
+  let request_start_at = performance.now();
+  let response = await (axios(config))
+  let request_end_at = performance.now();
+  let request_duration = request_end_at - request_start_at;
+  let dataToReturn = {}
+  dataToReturn['responseData'] = response.data
+  dataToReturn['responseTime'] = Math.round(await request_duration)
+  dataToReturn['responseStaus'] = response.status
+ // console.log(dataToReturn)
+  return dataToReturn
+}
 
 let requests = function () {
   this.getListTransactions = async function () {
@@ -9,12 +21,8 @@ let requests = function () {
         'Authorization': 'Bearer sup_sk_2YJ9Q2XkQEgnDS89ulkoIumdKMV6Xe3hy',
       }
     };
-    let request_start_at = performance.now();
-    let responce = await (axios(config))
-    let request_end_at = performance.now();
-    let request_duration = request_end_at - request_start_at;
-    console.log(request_duration);
-    return responce.data.items
+   return await responseHandler(config)
+
   }
 
   this.getListBankAccaunts = async function () {
@@ -25,8 +33,8 @@ let requests = function () {
         'Authorization': 'Bearer sup_sk_2YJ9Q2XkQEgnDS89ulkoIumdKMV6Xe3hy',
       }
     };
-    const responce = await (axios(config))
-    return responce.data
+    let response = await (axios(config))
+    return response.data
   }
 
 
