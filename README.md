@@ -11,8 +11,8 @@
 7. [Assignment](#Assignment)
 
 ### SQL Task
-8. [Assignment] (#Assignment)
-9. [Answers] (#Answers)
+8. [Assignment](#Assignment)
+9. [Answers](#Answers)
 
 ## Purpose
 
