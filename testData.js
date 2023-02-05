@@ -12,5 +12,6 @@ module.exports = {
             "created_at": "2023-02-01T21:11:02.076Z",
             "bank_name": "Българска народна банка"
         }
-    ]
+    ],
+    invalidTokenResponse:"Request failed with status code 401 ERR_BAD_REQUEST"
 }
