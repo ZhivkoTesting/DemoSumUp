@@ -1,46 +1,39 @@
 # SumUp demo
 
 ## Contents
-### Payments Registry End-to-End Tests
-1. [Purpose](#Purpose)
-2. [Coverage](#Coverage)
-3. [Dependencies](#Dependencies)
-4. [Usage](#Usage)
-5. [Prerequisites](#Prerequisites)
-6. [Running the project](#Running-the-project)
-7. [Assignment](#Assignment)
+### SumUp API Tests
+1. [Introduction](#Introduction)
+2. [Environment](#Environment)
+2. [How to use](#How-to-use)
+3. [Prerequisites](#Prerequisites)
+4. [To start the project](#To-start-the-project)
+5. [Assignment](#Assignment)
 
 ### SQL Task
-8. [Assignment](#Assignment)
-9. [Answers](#Answers)
+6. [Assignment](#Assignment)
+7. [Answers](#Answers)
 
-## Purpose
+## Introduction
 
 API integration testing involves testing the interaction between multiple APIs to ensure they function correctly when integrated with each other. It verifies the integration points and data exchange between the APIs and confirms that the system meets the specified requirements. This type of testing is important for ensuring a seamless user experience, proper data flow, and stability in the overall system.
-
-## Coverage
-
 This type of testing verifies API functionality, data compatibility, error handling and security protocols using automated test cases and scripts. Automated API integration testing improves efficiency and effectiveness of the testing process. The scope should be well-defined to ensure comprehensive and effective testing.
 
 
 ## Environment
 
-NodeJS runtime environment is used for the project realization.
-
-## Dependencies
 
 In order to achieve proper tests execution the environment should be configured 
 with the following components:
 
 * NodeJS v.18.
 
-## Usage
+## How to use
 
 ### Prerequisites
 
 The user is registered in the [SumUp developers site](https://developer.sumup.com/) and a valid bearer token is generated and imported as a variable in the test enviroment.
 
-### Running the project
+### To start the project
 
 In order to set up the project dependencies the following command should be executed:  
 `npm i --save-dev`
@@ -49,7 +42,7 @@ In order to execute the tests in Vusual Studio Code or a similar IDE a Mocha deb
 
 It is executed against the [SumUp REST API](https://api.sumup.com) environment.
 
-### Technical Assignment
+### Assignment
 1. Create a new account on the SumUp website (skip buying a card reader by
 choosing the “I already have one” option, fill in dummy business details).
 2. Login with the account from p.1 and go to
@@ -123,7 +116,7 @@ WHERE c.`Created_at` = cd.`Updated_at`;
 
 3-
 
-SELECT c.`id`, c.`First_name`, c.`Last_name`
-FROM `customers` c
-JOIN `customer_details` cd ON c.`id` = cd.`Customer_id`
-WHERE c.`Created_at` = cd.`Updated_at`;
+SELECT c.Country,  FORMAT (AVG(cd.Age), 0)  as avg_age
+FROM customers c
+JOIN customer_details cd ON c.id = cd.Customer_id
+GROUP BY c.Country ;
