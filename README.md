@@ -38,7 +38,7 @@ with the following components:
 
 ### Prerequisites
 
-The user is registered in the [SumUp developers site] (https://developer.sumup.com/) and a valid bearer token is generated and imported as a variable in the test enviroment.
+The user is registered in the [SumUp developers site](https://developer.sumup.com/) and a valid bearer token is generated and imported as a variable in the test enviroment.
 
 ### Running the project
 
