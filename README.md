@@ -116,7 +116,7 @@ WHERE c.`Created_at` = cd.`Updated_at`;
 
 3-
 
-SELECT c.Country,  FORMAT (AVG(cd.Age), 0)  as avg_age
-FROM customers c
-JOIN customer_details cd ON c.id = cd.Customer_id
-GROUP BY c.Country ;
+SELECT c.`Country`,  FORMAT (AVG(cd.`Age`), 0)  as `avg_age`
+FROM `customers` c
+JOIN `customer_details` cd ON c.`id` = cd.`Customer_id`
+GROUP BY c.`Country` ;
